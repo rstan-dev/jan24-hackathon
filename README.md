@@ -51,7 +51,9 @@ In this section, we will briefly discuss how our team addressed the applicable c
 
 # ABOUT SUBMISSION
 ## Intro
-One or two paragraphs providing an overview of our project
+**Hackathon Team 4, The 'BUDJ€T€€RS', developed this invaluable tool for Users to achieve their New Year's financial resolutions to save as much money as possible in 2024.** 
+
+This project has been developed as part of a Code Institute hosted hackathon. It is not for profit or to make any financial gain.
 
 ## Goal
 The goal section provides a concise summary of the main objective or purpose of the project or software described in this README. It addresses the following aspects:
