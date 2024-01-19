@@ -24,44 +24,48 @@ To log into the Heroku toolbelt CLI:
 5. Paste in your API key when asked
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-<h3>THIS TEMPLATE IS ONLY TO BE USED ON THE JANUARY HACKATHON PROJECT</h3>
-<h4>Please do not use it for the course project work</h4>
-<br>
-<h1 align="center"><strong>💲💲💲 Budget Busters: New Year, New Numbers 💲💲💲</strong>
-
 </h1>
 
-<img src="https://res.cloudinary.com/djdefbnij/image/upload/v1705314715/Hackathons/Screenshot_2024-01-15_at_10.27.38_rc7lor.png" alt="BudgetBustersBanner" width="1200"/>
-
-
-# SUBMISSION
-## Deployment
-#### _(please note, your team must also include the deployed links in the usual submission in Hackapp)_
-The project is deployed and can be accessed at [http://your-deployed-link.com](http://your-deployed-link.com).
-
-## Criteria
-In this section, we will briefly discuss how our team addressed the applicable criteria:
-
-- 💲 The project has a creative design that enhances user-experience
-- 💲 The project is finance related and has a real world use case
-- 💲 The project is Responsive and accessible on different screen sizes
-- 💲 The project is well-planned using GitHub Projects or other issue board
-- 💲 The project has a well documented README based on the provided template.
-
-# ABOUT SUBMISSION
 ## Intro
 **Hackathon Team 4, 'The BUDJ€T€€RS', developed this invaluable tool for Users to achieve their New Year's financial resolutions to save as much money as possible in 2024.** 
 
 This project has been developed as part of a Code Institute hosted hackathon. It is not for profit or to make any financial gain.
 
-## Goal
-The goal section provides a concise summary of the main objective or purpose of the project or software described in this README. It addresses the following aspects:
+## Site Goals
+# Expense Management App
 
-- ➡️ Problem Statement
-- ➡️ Objective(s)
-- ➡️ Target Audience
-- ➡️ Benefits
+### Problem Statement
+Many individuals struggle to effectively track and manage their expenses, leading to financial stress and difficulties in budgeting.
+
+### Objective(s)
+- Develop a comprehensive expense management app that empowers users to track, categorize, and analyze their expenses effortlessly.
+- Provide tools for users to set budgets, receive alerts, and gain insights into their spending habits.
+
+### Target Audience
+The target audience includes individuals of all ages and backgrounds who want a user-friendly, secure, and feature-rich app to manage their personal finances. This app is suitable for both beginners looking to establish budgeting habits and experienced users seeking advanced expense tracking capabilities.
+
+### Benefits
+1. **Efficient Expense Tracking:**
+   - Users can easily add, edit, and delete expenses, categorize transactions, and attach receipts, ensuring a comprehensive and accurate record of their financial activities.
+
+2. **Informed Financial Planning:**
+   - The app enables users to set budget limits for various categories, receive timely alerts, and view historical data, empowering them to make informed financial decisions and achieve their saving goals.
+
+3. **User-Friendly Interface:**
+   - The personalized user profiles and intuitive interface make it easy for users to navigate the app, customize their experience, and gain a quick understanding of their financial status.
+
+4. **Time-Saving Automation:**
+   - The ability to track recurring income entries and automate regular transactions simplifies the process of managing finances, saving users time and effort.
+
+5. **Security and Privacy:**
+   - Secure user authentication and data encryption ensure the confidentiality of personal and financial information, fostering trust and confidence among users.
+
+6. **Insightful Analytics:**
+   - Users can access visual reports, budget summaries, and historical data, gaining valuable insights into their spending patterns and financial trends.
+
+7. **Tailored Financial Solutions:**
+   - The app caters to a diverse user base, offering customizable budgeting options and support for multiple accounts, making it adaptable to various financial needs and preferences.
+
 
 ## Tech
 In the tech section, we provide information about the technology stack, dependencies, and any technical details related to the project.
