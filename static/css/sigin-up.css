@@ -1,0 +1,41 @@
+/*Utilities*/
+.display-block{
+    display:flex;
+    flex-direction:column !important;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.text-center{
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+.sing-in-container{
+    margin: 0 auto;
+    max-width: 80%;
+    width: fit-content;
+    background:linear-gradient(to top left ,rgb(21, 73, 28), rgb(205, 233, 215)60%);;
+    text-align: center;
+    padding: 100px;
+    border: solid black 1px;
+    box-shadow: 3px 2px 4px gray;
+}
+
+.form-title{
+    font-family: fantasy;
+    color: cadetblue;
+    font-size: 5rem;
+}
+.sign-up-text{
+    margin: 10px auto;
+    max-width: 300px;
+  
+}
+
+.signup{
+    display: flex;
+    flex-direction: column;
+}
