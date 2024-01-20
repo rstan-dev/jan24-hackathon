@@ -1,6 +1,33 @@
-img {
+/* img {
     vertical-align: middle;
     max-height: 175px;
     position: relative;
     margin-left: 50%;
+    animation-direction:normal;
+} */
+
+img {
+    height: 175px;
+    position: relative;
+    animation: myfirst 5s 1;
+    animation-direction: reverse;
+  }
+  
+  @keyframes myfirst {
+    0%   {left: 0px; top: 0px;}
+    25%  {left: 200px; top: 0px;}
+    50% {left: 200px; top: 200px;}
+    75%  {left: 0px; top: 200px;}
+    100% {left: 0px; top: 0px;}
+  }
+
+h1 {
+    position: absolute;
+    margin-left: 13%;
+    font-family: fantasy;
+    color: cadetblue;
+}
+
+.icons {
+    margin-left: 13%;
 }
