@@ -28,7 +28,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY", '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-rstandev-jan24hackathon-jc3je8awxgz.ws-eu107.gitpod.io', '8000-rstandev-jan24hackathon-9y203k5l0m3.ws-eu107.gitpod.io']
+ALLOWED_HOSTS = [
+    '8000-rstandev-jan24hackathon-jc3je8awxgz.ws-eu107.gitpod.io',
+    '8000-rstandev-jan24hackathon-9y203k5l0m3.ws-eu107.gitpod.io',
+    '8000-rstandev-jan24hackathon-zvbwf61zad6.ws-eu107.gitpod.io',
+    ]
 
 
 # Application definition
@@ -97,7 +101,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/'  # upon logging in get redirected to the home page
+LOGIN_REDIRECT_URL = ''  # upon logging in get redirected to the home page
 
 WSGI_APPLICATION = 'BudgetBusters.wsgi.application'
 

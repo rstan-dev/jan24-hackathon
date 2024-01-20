@@ -1,0 +1,92 @@
+[
+    {
+        "pk": 1,
+        "model": "accounts.category",
+        "fields": {
+            "name": "household",
+            "friendly_name": "Household",
+            "icon": "fa-solid fa-house"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "accounts.category",
+        "fields": {
+            "name": "food",
+            "friendly_name": "Food",
+            "icon": "fa-solid fa-utensils"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "accounts.category",
+        "fields": {
+            "name": "transport",
+            "friendly_name": "Transport",
+            "icon": "fa-solid fa-car-side"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "accounts.category",
+        "fields": {
+            "name": "social_life",
+            "friendly_name": "Social Life",
+            "icon": "fa-solid fa-heart"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "accounts.category",
+        "fields": {
+            "name": "clothes",
+            "friendly_name": "Clothes",
+            "icon": "fa-solid fa-shirt"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "accounts.category",
+        "fields": {
+            "name": "health",
+            "friendly_name": "Health",
+            "icon": "fa-solid fa-briefcase-medical"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "accounts.category",
+        "fields": {
+            "name": "phone_service",
+            "friendly_name": "Phone",
+            "icon": "fa-solid fa-phone"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "accounts.category",
+        "fields": {
+            "name": "education",
+            "friendly_name": "Education",
+            "icon": "fa-solid fa-graduation-cap"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "accounts.category",
+        "fields": {
+            "name": "finance",
+            "friendly_name": "Finance",
+            "icon": "fa-solid fa-coins"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "accounts.category",
+        "fields": {
+            "name": "gift",
+            "friendly_name": "Gift",
+            "icon": "fa-solid fa-gift"
+        }
+    }
+]

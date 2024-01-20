@@ -1,8 +1,17 @@
 from django.shortcuts import render
 
+from .models import Category
+
 # Create your views here.
 
-def index(request):
-    """ A view to return the index profile page """
+def account(request):
+    """ A view to show the profile of a user """
 
-    return render(request, 'accounts/profile.html')
+    categories = Category.objects.all()
+
+    context = {
+        'categories': categories,
+    }
+
+    return render(request, 'accounts/profile.html', context)
+
