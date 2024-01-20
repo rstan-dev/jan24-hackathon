@@ -41,6 +41,9 @@ h1 {
 .icons {
     margin-left: 13%;
 }
-.navbar{
 
+.navbar{
+  background-image: url("/static/media/Version3_BrandNameOnly.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
