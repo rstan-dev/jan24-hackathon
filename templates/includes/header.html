@@ -1,0 +1,69 @@
+{% load static %}
+
+{% block content %}
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+        <!-- .navbar -->
+        <nav class="navbar navbar-default">
+
+        <!-- .logo -->
+        <!-- <img class="logo me-auto">
+        <a href="{% url 'home' %}"><img src="{% static 'media/logo.jpg' %}" width="auto"
+                height="auto" alt="static/media/logo.jpg" class="img-fluid"></a> -->
+
+        <img class="img" src="{% static 'media/logo2.png' %}" alt= "image of project logo" style="z-index: 10;">
+
+        <!-- End .logo -->
+
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Home</a>
+            </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                  <li><a href="#">Link</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </li>
+                </ul> -->
+
+                <ul class="nav navbar-nav">
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+                    <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+                    {% else %}
+                    <li><a href="{% url 'account_login' %}">Sign In</a></li>
+                    <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+                    {% endif %}
+                  </ul>
+
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+
+          </nav>
+    </div>
+</header><!-- End Header -->
+
+
+
+{% endblock %}

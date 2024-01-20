@@ -29,9 +29,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY", '')
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     '8000-rstandev-jan24hackathon-jc3je8awxgz.ws-eu107.gitpod.io',
     '8000-rstandev-jan24hackathon-9y203k5l0m3.ws-eu107.gitpod.io',
     '8000-rstandev-jan24hackathon-zvbwf61zad6.ws-eu107.gitpod.io',
+    
     ]
 
 
@@ -96,13 +98,13 @@ SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = ''  # upon logging in get redirected to the home page
+LOGIN_REDIRECT_URL = '/profile'  # upon logging in get redirected to the home page
 
 WSGI_APPLICATION = 'BudgetBusters.wsgi.application'
 
