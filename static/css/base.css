@@ -1,4 +1,6 @@
-img.logo {
-    width: 30px;
-    height: 20px;
+img {
+    vertical-align: middle;
+    max-height: 175px;
+    position: relative;
+    margin-left: 50%;
 }
