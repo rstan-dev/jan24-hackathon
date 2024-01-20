@@ -2,5 +2,33 @@
 {% load static %}
 
 {% block content %}
-    <h1>It works!</h1>
+    <div class="container">
+        <h1>Personal Budget App</h1>
+
+        <div class="budget-section">
+            <h2>Enter Your Monthly Budget</h2>
+            <input type="number" id="totalBudget" placeholder="Enter Total Budget">
+        </div>
+
+        <div class="expenses-section">
+            <h2>Monthly Expenses</h2>
+            <div id="expenseInputs">
+                <div class="expense-input">
+                    <label>Category:</label>
+                    <input type="text" class="expenseCategory" placeholder="Enter category">
+                    <label>Amount:</label>
+                    <input type="number" class="expenseAmount" placeholder="Enter amount">
+                </div>
+            </div>
+            <button onclick="addExpenseInput()">Add Another Expense</button>
+        </div>
+
+        <button onclick="calculateBudget()">Calculate</button>
+
+        <div class="summary-section">
+            <h2>Budget Summary</h2>
+            <p id="totalExpenses">Total Expenses: </p>
+            <p id="remainingBudget">Remaining Budget: </p>
+        </div>
+    </div>
 {% endblock %}
