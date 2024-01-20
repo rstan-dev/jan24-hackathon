@@ -1,16 +1,26 @@
-/* img {
+.logo-container {
+  position: relative;
+}
+
+img {
     vertical-align: middle;
     max-height: 175px;
     position: relative;
-    margin-left: 50%;
-    animation-direction:normal;
-} */
+    animation: mymove forwards;
+    animation-duration: 5s;
+    margin-bottom: 145px;
+  }
+  
+  @keyframes mymove {
+    from {top: 0px;}
+    to {top: 200px;}
+  }
 
-img {
+/* img {
     height: 175px;
     position: relative;
     animation: myfirst 5s 1;
-    animation-direction: reverse;
+    animation-direction: normal;
   }
   
   @keyframes myfirst {
@@ -19,7 +29,7 @@ img {
     50% {left: 200px; top: 200px;}
     75%  {left: 0px; top: 200px;}
     100% {left: 0px; top: 0px;}
-  }
+  } */
 
 h1 {
     position: absolute;
