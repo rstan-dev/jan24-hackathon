@@ -1,4 +1,5 @@
 from django.shortcuts import render
+
 from .models import Category
 
 # Create your views here.
@@ -13,3 +14,4 @@ def account(request):
     }
 
     return render(request, 'accounts/profile.html', context)
+
