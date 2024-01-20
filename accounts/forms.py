@@ -1,7 +1,4 @@
-from . import views
+from django import forms
 
-
-class MyModelForm(ModelForm):
-    class Meta:
-        model = MyModel
-        fields = ['categories']
+class MyForm(forms.Form):
+    categories = forms.CharField()

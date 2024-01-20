@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Category
+from .forms import MyForm
 
 # Create your views here.
 
@@ -25,13 +26,13 @@ def update_budget(request):
     
     expenses = request.session.get('expenses', {})
 
-    # category_name = ""
-    for category in categories:
-        category_name = category.name
-        if category_name in list(expenses.keys()):
-            expenses[category_name] += amount
-        else:
-            expenses[category_name] = amount
+    category_name = str(request.POST.get('categories'))
+    
+    # for category in categories:
+    if category_name in list(expenses.keys()):
+        expenses[category_name] += amount
+    else:
+        expenses[category_name] = amount
 
     request.session['expenses'] = expenses
     print(request.session['expenses'])

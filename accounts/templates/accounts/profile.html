@@ -7,6 +7,7 @@
 
         <form class="form" action="{% url 'update_budget' %}" method="POST">
             {% csrf_token %}
+            {{ form.as_p }}
             <div class="budget-section">
                 <h2>Enter Your Monthly Budget</h2>
                 <input type="number" id="totalBudget" placeholder="Enter Total Budget" name="total_budget" value="0" 
@@ -20,7 +21,7 @@
                         <label>Category:</label>
                         <select name="categories" id="categories" class="expenseCategory">
                             {% for c in categories %}
-                                <option value="{{ c.name }}">{{ c.friendly_name }}</option>
+                                <option value="{{ c.name }}" id="category">{{ c.friendly_name }}</option>
                             {% endfor %}
                         </select>
                         <label>Amount:</label>
