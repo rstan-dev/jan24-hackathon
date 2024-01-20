@@ -2,5 +2,32 @@
 {% load static %}
 
 {% block content %}
-    <h1>It works!</h1>
+<div class="budget-section">
+    <h2>Enter Your Monthly Budget</h2>
+    <input type="number" id="totalBudget" placeholder="Enter Total Budget">
+</div>
+
+<div class="expenses-section">
+    <h2>Monthly Expenses</h2>
+    <label>Food:</label>
+    <input type="number" id="foodExpense" placeholder="Enter amount">
+
+    <label>Rent:</label>
+    <input type="number" id="rentExpense" placeholder="Enter amount">
+
+    <label>Utilities:</label>
+    <input type="number" id="utilitiesExpense" placeholder="Enter amount">
+
+    <label>Entertainment:</label>
+    <input type="number" id="entertainmentExpense" placeholder="Enter amount">
+</div>
+
+<button>Calculate</button>
+
+<div class="summary-section">
+    <h2>Budget Summary</h2>
+    <p id="totalExpenses">Total Expenses: </p>
+    <p id="remainingBudget">Remaining Budget: </p>
+</div>
+</div>
 {% endblock %}
