@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Category
 from .forms import MyForm
 
@@ -28,7 +28,6 @@ def update_budget(request):
 
     category_name = str(request.POST.get('categories'))
     
-    # for category in categories:
     if category_name in list(expenses.keys()):
         expenses[category_name] += amount
     else:
@@ -36,6 +35,25 @@ def update_budget(request):
 
     request.session['expenses'] = expenses
     print(request.session['expenses'])
-    print(total_budget)
+    request.session['total_budget'] = total_budget
+    print(request.session['total_budget'])
 
     return redirect(redirect_url)
+
+
+def adjust_budget(request):
+    """ """
+
+    amount = int(request.POST.get('quantity'))
+    redirect_url = request.POST.get('redirect_url')
+    expenses = request.session.get('expenses', {})
+    
+    if amount > 0:
+        expenses[category_name] = amount
+    else:
+        expenses.pop(category_name)
+
+    # overwrite the variable with the updated version
+    request.session['expenses'] = expenses
+    
+    return redirect(reverse('profile'))

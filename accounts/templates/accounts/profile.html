@@ -38,8 +38,19 @@
 
         <div class="summary-section">
             <h2>Budget Summary</h2>
-            <p id="totalExpenses">Total Expenses: </p>
-            <p id="remainingBudget">Remaining Budget: </p>
+            {% if expenses %}
+                <p> Budget: £{{ total_budget }}</p>
+                <p id="totalExpenses">Total Expenses: £{{ total_expenses }} </p>
+                <p id="remainingBudget">Remaining Budget: £{{ total }}</p>
+                <hr>
+                {% for x,y in expenses.items %}
+                    <p><strong>Category: {{ x }}</strong></p>
+                    <input type="text" id="amount" value="£{{ y }}">
+                    <a type="button" id="adjust" href="{% url 'adjust_budget' %}"><small>Update</small></a>
+                    <a type="button" id="remove" href=""><small>Remove</small></a>
+                    <hr>
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 {% endblock %}
