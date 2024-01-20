@@ -1,9 +1,44 @@
-
 {% extends "base.html" %}
 {% load static %}
 
 {% block content %}
-    {% for c in categories %}
-        {{ c.friendly_name }}
-    {% endfor %}
+    <div class="container">
+        <h1>Personal Budget App</h1>
+
+        <form class="form" action="{% url 'update_budget' %}" method="POST">
+            {% csrf_token %}
+            <div class="budget-section">
+                <h2>Enter Your Monthly Budget</h2>
+                <input type="number" id="totalBudget" placeholder="Enter Total Budget" name="total_budget" value="0" 
+                    min="0" max="100000">
+            </div>
+
+            <div class="expenses-section">
+                <h2>Monthly Expenses</h2>
+                <div id="expenseInputs">
+                    <div class="expense-input">
+                        <label>Category:</label>
+                        <select name="categories" id="categories" class="expenseCategory">
+                            {% for c in categories %}
+                                <option value="{{ c.name }}">{{ c.friendly_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <label>Amount:</label>
+                        <input type="number" class="expenseAmount" placeholder="Enter amount" name="expense_amount" value="0" 
+                        min="0" max="100000">
+                    </div>
+                </div>
+                <button type="button" id="addExpense" onclick="addExpenseInput()">Add Another Expense </button>
+            </div>
+
+            <input type="submit" onclick="calculateBudget()" value="Submit">
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+        </form>
+
+        <div class="summary-section">
+            <h2>Budget Summary</h2>
+            <p id="totalExpenses">Total Expenses: </p>
+            <p id="remainingBudget">Remaining Budget: </p>
+        </div>
+    </div>
 {% endblock %}

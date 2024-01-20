@@ -1,13 +1,26 @@
+var categoriesOptions = ['Household', 'Food', 'Transport', 'Social Life', 'Clothes', 'Health', 'Phone', 'Education', 'Finance', 'Gift' ]
+
 function addExpenseInput() {
     var expenseInputs = document.getElementById('expenseInputs');
     var newInput = document.createElement('div');
     newInput.className = 'expense-input';
     newInput.innerHTML = `
         <label>Category:</label>
-        <input type="text" class="expenseCategory" placeholder="Enter category">
+        <select name="categories" id="categories" class="expenseCategory">
+            <option value="household">Household</option>
+            <option value="food">Food</option>
+            <option value="transport">Transport</option>
+            <option value="social_life">Social Life</option>
+            <option value="clothes">Clothes</option>
+            <option value="health">Health</option>
+            <option value="phone_service">Phone</option>
+            <option value="education">Education</option>
+            <option value="finance">Finance</option>
+            <option value="gift">Gift</option>
+        </select>
         <label>Amount:</label>
         <input type="number" class="expenseAmount" placeholder="Enter amount">
-    `;
+        `;
     expenseInputs.appendChild(newInput);
 }
 
