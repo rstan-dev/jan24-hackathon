@@ -2,31 +2,28 @@
 {% load static %}
 
 {% block content %}
-<div class="container my-4">
-    <h1 class="text-center mb-4">Personal Budget App</h1>
+<div class="container">
+    <h1>Personal Budget App</h1>
 
-    <div class="budget-section mb-3">
+    <div class="budget-section">
         <h2>Enter Your Monthly Budget</h2>
-        {% comment %} Replace with Django form field {% endcomment %}
-        <input type="number" class="form-control" id="totalBudget" placeholder="Enter Total Budget">
+        <input type="number" id="totalBudget" placeholder="Enter Total Budget">
     </div>
 
-    <div class="expenses-section mb-3">
+    <div class="expenses-section">
         <h2>Monthly Expenses</h2>
         <div id="expenseInputs">
-            <div class="form-group">
+            <div class="expense-input">
                 <label>Category:</label>
-                {% comment %} Replace with Django form field {% endcomment %}
-                <input type="text" class="form-control expenseCategory" placeholder="Enter category">
-            </div>
-            <div class="form-group">
+                <input type="text" class="expenseCategory" placeholder="Enter category">
                 <label>Amount:</label>
-                {% comment %} Replace with Django form field {% endcomment %}
-                <input type="number" class="form-control expenseAmount" placeholder="Enter amount">
+                <input type="number" class="expenseAmount" placeholder="Enter amount">
             </div>
         </div>
-        <!-- Add dynamic fields as needed in Django -->
+        <button onclick="addExpenseInput()">Add Another Expense</button>
     </div>
+
+    <button onclick="calculateBudget()">Calculate</button>
 
     <div class="summary-section">
         <h2>Budget Summary</h2>
