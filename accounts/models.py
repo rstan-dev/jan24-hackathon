@@ -1,3 +1,5 @@
+from django.db.models import Sum
+from django.conf import settings
 from django.db import models
 
 
@@ -15,3 +17,13 @@ class Category(models.Model):
 
     def get_friendly_name(self):
         return self.friendly_name
+
+
+class Budget(models.Model):
+
+    total_budget = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    total_expenses = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    expenses = models.JSONField()
+    date = models.DateTimeField(auto_now_add=True)
+
