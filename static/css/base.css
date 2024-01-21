@@ -3,18 +3,22 @@
 }
 
 img {
-    vertical-align: middle;
-    max-height: 175px;
-    position: relative;
-    animation: mymove forwards;
-    animation-duration: 5s;
-    margin-bottom: 145px;
+  vertical-align: middle;
+  max-height: 175px;
+  position: relative;
+  animation: mymove forwards;
+  animation-duration: 5s;
+  margin-bottom: 145px;
+}
+
+@keyframes mymove {
+  from {
+    top: 0px;
   }
-  
-  @keyframes mymove {
-    from {top: 0px;}
-    to {top: 200px;}
+  to {
+    top: 200px;
   }
+}
 
 /* img {
     height: 175px;
@@ -32,17 +36,16 @@ img {
   } */
 
 h1 {
-    position: absolute;
-    margin-left: 13%;
-    font-family: fantasy;
-    color: cadetblue;
+  font-size: 4rem;
+  font-family: fantasy;
+  color: cadetblue;
 }
 
 .icons {
-    margin-left: 13%;
+  margin-left: 13%;
 }
 
-.navbar{
+.navbar {
   background-image: url("/static/media/Version3_BrandNameOnly.png");
   background-repeat: no-repeat;
   background-size: contain;
