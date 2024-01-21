@@ -60,6 +60,20 @@ def adjust_budget(request):
     return redirect(reverse('profile'))
 
 
+def expense_planner_function(request):
+    """ """
+
+    expenses = request.session.get('expenses', {})
+
+    expense_planner_amount = int(request.POST.get('expense_planner_amount'), 0)
+    already_spent = int(request.POST.get('already_spent'), 0)
+    left_amount = int(request.POST.get('left_amount', 0))
+
+    left_amount = expense_planner_amount - already_spent
+
+    return redirect(reverse('expense'))
+
+
 # Bekry:
 def expenses(request):
     # Assume you have logic to calculate total_expenses for each category

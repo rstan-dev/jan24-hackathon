@@ -1,8 +1,14 @@
+
+
 body {
+  min-height: 100vh;
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   color: #333;
   text-align: center;
+  background:  url("/static/media/bgimg1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {

@@ -33,7 +33,6 @@ ALLOWED_HOSTS = [
     '8000-rstandev-jan24hackathon-jc3je8awxgz.ws-eu107.gitpod.io',
     '8000-rstandev-jan24hackathon-9y203k5l0m3.ws-eu107.gitpod.io',
     '8000-rstandev-jan24hackathon-zvbwf61zad6.ws-eu107.gitpod.io',
-    
     ]
 
 
