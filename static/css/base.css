@@ -2,7 +2,7 @@
   position: relative;
 }
 
-img {
+img.img {
     vertical-align: middle;
     max-height: 175px;
     position: relative;
@@ -47,3 +47,39 @@ h1 {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+/* Icons */
+.icon-container {
+  width: 50%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 20px;
+}
+
+.image-container {
+  width: 25%;
+  border-radius: 25%;
+}
+.image-icon {
+  display: flex;
+  width: 40%;
+  height: 70%;
+  margin: auto;
+  align-items: end;
+}
+
+.icon-text {
+  list-style-type: none;
+  text-decoration: none !important;
+  color: #FFFFFF;
+}
+
+h3 {
+  font-size: medium;
+  margin: auto;
+  padding: 5px;
+  color: black;
+}
+

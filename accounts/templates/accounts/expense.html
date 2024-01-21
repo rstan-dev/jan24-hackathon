@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    {% for c in categories %}
+        {{ c.friendly_name }}
+    {% endfor %}
+
+    <div class="container">
+        <div class="budget-section">
+            <h2>Expense Summary</h2>
+        </div>
+
+        <div class="expenses-section">
+            <h2>Monthly Expenses</h2>
+            <div id="expenseInputs">
+                {% for c in categories %}
+                <div class="summary-section">
+                    <p id="categoryName">{{ c.friendly_name }}</p>
+                    <p id="totalExpenses">Total Expenses: {% if total_expenses %}{{ total_expenses }}{% else %}{{0}}{% endif %}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
