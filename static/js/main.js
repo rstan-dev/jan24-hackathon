@@ -19,7 +19,8 @@ function addExpenseInput() {
             <option value="gift">Gift</option>
         </select>
         <label>Amount:</label>
-        <input type="number" class="expenseAmount" placeholder="Enter amount">
+        <input type="number" class="expenseAmount" placeholder="Enter amount" name="expense_amount" value="0" 
+            min="0" max="100000">
         `;
     expenseInputs.appendChild(newInput);
 }

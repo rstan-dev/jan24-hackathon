@@ -5,7 +5,7 @@ from django.conf import settings
 
 def budget_content(request):
 
-    total_budget = int(request.session.get('total_budget'))
+    total_budget = int(request.session.get('total_budget', 0))
     total_expenses = 0
     expenses = request.session.get('expenses', {})
     

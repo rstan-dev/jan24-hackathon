@@ -21,7 +21,7 @@
                         <label>Category:</label>
                         <select name="categories" id="categories" class="expenseCategory">
                             {% for c in categories %}
-                                <option value="{{ c.name }}" id="category">{{ c.friendly_name }}</option>
+                                <option value="{{ c.friendly_name }}" id="category">{{ c.friendly_name }}</option>
                             {% endfor %}
                         </select>
                         <label>Amount:</label>
@@ -44,12 +44,18 @@
                 <p id="remainingBudget">Remaining Budget: £{{ total }}</p>
                 <hr>
                 {% for x,y in expenses.items %}
-                    <p><strong>Category: {{ x }}</strong></p>
-                    <input type="text" id="amount" value="£{{ y }}">
-                    <a type="button" id="adjust" href="{% url 'adjust_budget' %}"><small>Update</small></a>
-                    <a type="button" id="remove" href=""><small>Remove</small></a>
+                    <form method="POST" action="adjust_budget/">
+                        {% csrf_token %}    
+                        <p id="usedCategory"><strong>{{ x }}</strong></p>
+                        <input type="hidden" name="used_category" value="{{ x }}">
+                        <input type="text" id="newAmount" value="{{ y }}" name="new_amount" 
+                        min="0" max="100000">
+                        <input type="submit" value="Update" id="adjust">
+                    </form>
                     <hr>
                 {% endfor %}
+            {% else %}
+                    <p>You have not added any expenses yet.</p>
             {% endif %}
         </div>
     </div>

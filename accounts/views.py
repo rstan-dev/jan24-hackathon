@@ -34,9 +34,7 @@ def update_budget(request):
         expenses[category_name] = amount
 
     request.session['expenses'] = expenses
-    print(request.session['expenses'])
     request.session['total_budget'] = total_budget
-    print(request.session['total_budget'])
 
     return redirect(redirect_url)
 
@@ -44,16 +42,19 @@ def update_budget(request):
 def adjust_budget(request):
     """ """
 
-    amount = int(request.POST.get('quantity'))
+    category = str(request.POST.get('used_category'))
+    new_amount = int(request.POST.get('new_amount'))
     redirect_url = request.POST.get('redirect_url')
+
     expenses = request.session.get('expenses', {})
     
-    if amount > 0:
-        expenses[category_name] = amount
+    if new_amount > 0:
+        expenses[category] = new_amount
     else:
-        expenses.pop(category_name)
+        expenses.pop(category)
 
     # overwrite the variable with the updated version
     request.session['expenses'] = expenses
-    
+    print(expenses)
+
     return redirect(reverse('profile'))
