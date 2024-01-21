@@ -26,7 +26,7 @@ img {
     animation: myfirst 5s 1;
     animation-direction: normal;
   }
-  
+
   @keyframes myfirst {
     0%   {left: 0px; top: 0px;}
     25%  {left: 200px; top: 0px;}

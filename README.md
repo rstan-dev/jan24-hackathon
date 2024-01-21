@@ -1,3 +1,4 @@
+![ThriveWallet brandname](./static/media/Version3_BrandNameOnly.png)
 ## Intro
 **Hackathon Team 4, 'The BUDJ€T€€RS', developed this invaluable tool for Users to achieve their New Year's financial resolutions to save as much money as possible in 2024.** 
 
