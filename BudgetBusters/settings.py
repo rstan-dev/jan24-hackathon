@@ -18,6 +18,7 @@ if os.path.exists("env.py"):
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -34,7 +35,7 @@ ALLOWED_HOSTS = [
     '8000-rstandev-jan24hackathon-jc3je8awxgz.ws-eu107.gitpod.io',
     '8000-rstandev-jan24hackathon-9y203k5l0m3.ws-eu107.gitpod.io',
     '8000-rstandev-jan24hackathon-zvbwf61zad6.ws-eu107.gitpod.io',
-    'thrive-wallet.heroku.app.com',
+    'thrive-wallet.herokuapp.com',
     'thrive-wallet-b5a54babd69b.herokuapp.com',
     ]
 
@@ -60,6 +61,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -73,12 +75,7 @@ ROOT_URLCONF = 'BudgetBusters.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'templates', 'allauth'),
-            os.path.join(BASE_DIR, 'templates', 'accounts'),
-            os.path.join(BASE_DIR, 'templates', 'includes'),
-        ],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -174,6 +171,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 
 
 # Default primary key field type
