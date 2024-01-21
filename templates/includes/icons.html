@@ -1,0 +1,38 @@
+{% load static %} {% block content %}
+{% if user.is_authenticated %}
+<div class="row icon-container">
+	<div class="col-sm-6 col-md-4 image-container icons">
+		<a href="{% url 'profile' %}" aria-label="Linked - Opens in same tab">
+			<div class="image-icon">
+				<img src="{% static '/icons/budget.svg' %}" alt="Budget Icon" />
+			</div>
+			<div class="icon-text">
+				<h3>Budget</h3>
+			</div>
+		</a>
+	</div>
+	<div class="col-sm-6 col-md-4 image-container icons">
+		<a href="{% url 'expense' %}" aria-label="Linked - Opens in same tab">
+			<div class="image-icon">
+				<img src="{% static '/icons/expense.svg' %}" alt="Budget Icon" />
+			</div>
+			<div class="icon-text" >
+				<h3>Expenses</h3>
+			</div>
+		</a>
+	</div>
+	<div class="col-sm-6 col-md-4 image-container icons">
+		<a href="{% url 'saving' %}" aria-label="Linked - Opens in same tab">
+		<a href="#" aria-label="Linked - Opens in same tab">
+			<div class="image-icon">
+				<img src="{% static '/icons/savings.svg' %}" alt="Budget Icon" />
+			</div>
+			<div class="icon-text">
+				<h3>Savings</h3>
+			</div>
+		</a>
+	</div>
+</div>
+
+{% endif %}
+{% endblock %}
