@@ -62,7 +62,6 @@ h1 {
   color: cadetblue;
 }
 
-<<<<<<< HEAD
 /* #footer-container p,
 #footer-container ul {
   margin: 2rem;
@@ -88,11 +87,10 @@ h1 {
 ul.social-networks {
   list-style: none;
   padding: 20px;
-=======
+}
 
 /*NAV CSS*/
 .nav{
->>>>>>> bc61bda43aadae81c661000601d77a01d02e681a
   display: flex;
   justify-content: space-between;
   align-items: center; /* Center the <ul> vertically */
@@ -120,7 +118,6 @@ ul.social-networks a:hover {
 /* .container {
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
   margin-bottom: 50px;
   padding: 50px;
 } */
@@ -130,7 +127,6 @@ ul.social-networks a:hover {
   justify-content: space-between;
   align-items: center;
   background-color: cadetblue;
-=======
   gap: 20px;
 }
 .nav-container{
@@ -193,37 +189,44 @@ border: 1px green solid;
 .container {
   width: 80%;
   align-items: center;
->>>>>>> bc61bda43aadae81c661000601d77a01d02e681a
 
 }
 
-#footer-font {
-  display: flex;
+#footer-container {
+  /* display: flex; */
   align-items: center;
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 2rem
+  justify-content: space-between;
+}
+
+.footer-text {
+  font-size: 16px; /* Set the font size for the <p> element */
+  margin: 0; /* Remove default margin */
+  color:cadetblue;
+}
+
+.footer-text a:hover {
+    color: rgb(9, 102, 14)
 }
 
 ul.social-networks {
-  max-width: 50vw;
-  list-style-type: none;
-  margin: 50px auto;
-  padding: 0;
-  text-align: center;
-  background-color: cadetblue;
-  display: inline-block;
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center the <ul> vertically */
+  justify-content: center; /* Center the <ul> horizontally */
 }
 
 ul.social-networks li {
-  display: inline-block;
-  width: 20%;
-  font-size: 4.5vmin;
-  color: whitesmoke
+  margin-right: 20px; /* Adjust spacing between social icons as needed */
+  font-size: 30px;
 }
 
 ul.social-networks a {
   text-decoration: none;
-  border-bottom: 0;
-  color: whitesmoke;
-} */
+  color:cadetblue; /* Add your preferred link color */
+}
+
+ul.social-networks a:hover {
+  color: rgb(9, 102, 14);
+}
