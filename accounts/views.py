@@ -60,6 +60,7 @@ def adjust_budget(request):
     return redirect(reverse('profile'))
 
 
+# Bekry:
 def expenses(request):
     # Assume you have logic to calculate total_expenses for each category
     # and pass it to the template context
