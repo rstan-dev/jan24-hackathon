@@ -11,14 +11,13 @@
         <!-- <img class="logo me-auto">
         <a href="{% url 'home' %}"><img src="{% static 'media/logo.jpg' %}" width="auto"
                 height="auto" alt="static/media/logo.jpg" class="img-fluid"></a> -->
-
-        <img class="img" src="{% static 'media/logo2.png' %}" alt= "image of project logo" style="z-index: 10;">
-
+        <div class="logo-container">
+          <img class="img" src="{% static 'media/logo2.png' %}" alt= "image of project logo" style="z-index: 10;">
+        </div>
         <!-- End .logo -->
 
             <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header">
+              <!-- <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                   <span class="sr-only">Toggle navigation</span>
                   <span class="icon-bar"></span>
@@ -49,6 +48,7 @@
 
                 <ul class="nav navbar-nav">
                     {% if user.is_authenticated %}
+                    <li><a class="navbar-brand" href="{% url 'profile' %}">Home</a></li>
                     <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
                     <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
                     {% else %}

@@ -1,36 +1,81 @@
-/* img {
-    vertical-align: middle;
-    max-height: 175px;
-    position: relative;
-    margin-left: 50%;
-    animation-direction:normal;
-} */
+.logo-container {
+  position: relative;
+}
 
 img {
+  vertical-align: middle;
+  max-height: 175px;
+  position: relative;
+  animation: mymove forwards;
+  animation-duration: 5s;
+  margin-bottom: 145px;
+}
+
+@keyframes mymove {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 200px;
+  }
+}
+
+/* img {
     height: 175px;
     position: relative;
     animation: myfirst 5s 1;
-    animation-direction: reverse;
+    animation-direction: normal;
   }
-  
+
   @keyframes myfirst {
     0%   {left: 0px; top: 0px;}
     25%  {left: 200px; top: 0px;}
     50% {left: 200px; top: 200px;}
     75%  {left: 0px; top: 200px;}
     100% {left: 0px; top: 0px;}
-  }
+  } */
 
 h1 {
-    position: absolute;
-    margin-left: 13%;
-    font-family: fantasy;
-    color: cadetblue;
+  font-size: 4rem;
+  font-family: fantasy;
+  color: cadetblue;
 }
 
 .icons {
-    margin-left: 13%;
+  margin-left: 13%;
 }
-.navbar{
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 50px;
+}
+
+#footer-font {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 2rem
+}
+
+.social-networks {
+  max-width: 50vw;
+  list-style-type: none;
+  margin: 50px auto;
+  padding: 0;
+  text-align: center;
+  background-color: cadetblue;
+}
+
+.social-networks li {
+  display: inline-block;
+  width: 20%;
+  font-size: 4.5vmin;
+  color: whitesmoke
+}
+
+.social-networks a {
+  text-decoration: none;
+  border-bottom: 0
 }
