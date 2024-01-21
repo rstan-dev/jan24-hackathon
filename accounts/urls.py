@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from .views import account, expenses, savings
+from .views import account, expenses
 
 urlpatterns = [
 

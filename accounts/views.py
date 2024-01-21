@@ -75,4 +75,3 @@ def calculate_total_saving(post_data, category_name):
                 pass  # Ignore invalid values
 
     return total_saving
-    
