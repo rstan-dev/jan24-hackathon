@@ -1,37 +1,54 @@
+
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: center;
+  background:  url("/static/media/bgimg1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
 }
 
-.budget-section, .expenses-section, .summary-section {
-    background: #fff;
-    padding: 20px;
-    margin: 20px 0;
+.title {
+  text-align: center;
+  margin: 10px auto;
+  font-family: fantasy;
+  font-size: 4rem;
+  color: cadetblue;
+}
+
+.budget-section,
+.expenses-section,
+.summary-section {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
 }
 
 input[type="number"] {
-    width: 70%;
-    padding: 10px;
-    margin: 10px 0;
+  width: 70%;
+  padding: 10px;
+  margin: 10px 0;
 }
 
 button {
-    width: 30%;
-    padding: 10px;
-    background: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+  width: 30%;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover {
-    background: #555;
+  background: #555;
 }

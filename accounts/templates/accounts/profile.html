@@ -1,39 +1,61 @@
-
 {% extends "base.html" %}
 {% load static %}
 
 {% block content %}
-    {% for c in categories %}
-        {{ c.friendly_name }}
-    {% endfor %}
-
     <div class="container">
         <h1>Personal Budget App</h1>
 
-        <div class="budget-section">
-            <h2>Enter Your Monthly Budget</h2>
-            <input type="number" id="totalBudget" placeholder="Enter Total Budget">
-        </div>
+        <form class="form" action="{% url 'update_budget' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="budget-section">
+                <h2>Enter Your Monthly Budget</h2>
+                <input type="number" id="totalBudget" placeholder="Enter Total Budget" name="total_budget" value="0" 
+                    min="0" max="100000">
+            </div>
 
-        <div class="expenses-section">
-            <h2>Monthly Expenses</h2>
-            <div id="expenseInputs">
-                <div class="expense-input">
-                    <label>Category:</label>
-                    <input type="text" class="expenseCategory" placeholder="Enter category">
-                    <label>Amount:</label>
-                    <input type="number" class="expenseAmount" placeholder="Enter amount">
+            <div class="expenses-section">
+                <h2>Monthly Expenses</h2>
+                <div id="expenseInputs">
+                    <div class="expense-input">
+                        <label>Category:</label>
+                        <select name="categories" id="categories" class="expenseCategory">
+                            {% for c in categories %}
+                                <option value="{{ c.friendly_name }}" id="category">{{ c.friendly_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <label>Amount:</label>
+                        <input type="number" class="expenseAmount" placeholder="Enter amount" name="expense_amount" value="0" 
+                        min="0" max="100000">
+                    </div>
                 </div>
             </div>
-            <button onclick="addExpenseInput()">Add Another Expense</button>
-        </div>
 
-        <button onclick="calculateBudget()">Calculate</button>
+            <input type="submit" value="Add Expense">
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+        </form>
 
         <div class="summary-section">
             <h2>Budget Summary</h2>
-            <p id="totalExpenses">Total Expenses: </p>
-            <p id="remainingBudget">Remaining Budget: </p>
+            {% if expenses %}
+                <p> Budget: £{{ total_budget }}</p>
+                <p id="totalExpenses">Total Expenses: £{{ total_expenses }} </p>
+                <p id="remainingBudget">Remaining Budget: £{{ total }}</p>
+                <hr>
+                {% for x,y in expenses.items %}
+                    <form method="POST" action="adjust_budget/">
+                        {% csrf_token %}    
+                        <p id="usedCategory"><strong>{{ x }}</strong></p>
+                        <input type="hidden" name="used_category" value="{{ x }}">
+                        <input type="text" id="newAmount" value="{{ y }}" name="new_amount" 
+                        min="0" max="100000">
+                        <input type="submit" value="Update" id="adjust">
+                    </form>
+                    <hr>
+                {% endfor %}
+            {% else %}
+                    <p>You have not added any expenses yet.</p>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

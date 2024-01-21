@@ -1,20 +1,45 @@
-.logo-container {
-  position: relative;
+@keyframes spin { 
+  0%{
+    transform: rotateY(0deg);
+  }
+   50%{
+    transform: rotateY(360deg);
+   }
+
+  100%{
+    transform: rotateY(0deg);
+  }
 }
 
-img {
-    vertical-align: middle;
-    max-height: 175px;
-    position: relative;
-    animation: mymove forwards;
-    animation-duration: 5s;
-    margin-bottom: 145px;
+
+.logo-container {
+  position: relative;
+
+}
+
+.logo {
+  position: absolute;
+  vertical-align: middle;
+  max-height: 175px;
+  position: relative;
+  transform: rotateY(0deg);
+  animation-name: spin;
+  animation-duration:  2s;
+}
+
+
+
+/* 
+@keyframes mymove {
+  from {
+    top: 0px;
   }
-  
-  @keyframes mymove {
-    from {top: 0px;}
-    to {top: 200px;}
+  to {
+    top: 200px;
   }
+} */
+
+
 
 /* img {
     height: 175px;
@@ -22,7 +47,7 @@ img {
     animation: myfirst 5s 1;
     animation-direction: normal;
   }
-  
+
   @keyframes myfirst {
     0%   {left: 0px; top: 0px;}
     25%  {left: 200px; top: 0px;}
@@ -32,12 +57,12 @@ img {
   } */
 
 h1 {
-    position: absolute;
-    margin-left: 13%;
-    font-family: fantasy;
-    color: cadetblue;
+  font-size: 4rem;
+  font-family: fantasy;
+  color: cadetblue;
 }
 
+<<<<<<< HEAD
 /* #footer-container p,
 #footer-container ul {
   margin: 2rem;
@@ -63,6 +88,11 @@ h1 {
 ul.social-networks {
   list-style: none;
   padding: 20px;
+=======
+
+/*NAV CSS*/
+.nav{
+>>>>>>> bc61bda43aadae81c661000601d77a01d02e681a
   display: flex;
   justify-content: space-between;
   align-items: center; /* Center the <ul> vertically */
@@ -90,6 +120,7 @@ ul.social-networks a:hover {
 /* .container {
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   margin-bottom: 50px;
   padding: 50px;
 } */
@@ -99,6 +130,70 @@ ul.social-networks a:hover {
   justify-content: space-between;
   align-items: center;
   background-color: cadetblue;
+=======
+  gap: 20px;
+}
+.nav-container{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.nav > li:hover {
+background-color: transparent;
+border: 1px green solid;
+}
+
+.nav > li:hover a{
+  color: green;
+}
+.nav >li >a{
+  color: rgb(25, 66, 13);
+  font-size: 2rem;
+}
+
+
+
+/*END NAV CSS*/
+
+/*ICONS CSS*/
+
+
+.image-icon > img{
+  max-width:50%;
+  max-height: 50%;
+}
+
+.image-icon{
+  margin: 0 auto;
+  max-width: 150px;
+  height: max-content;
+}
+
+.icon-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.icon-text > h3 {
+  margin: 10px auto;
+  color: rgb(25, 66, 13);
+}
+
+@media (max-width:768px){
+  .icon-container{
+    width: 80%;
+  }
+}
+
+
+/*END ICONS CSS*/
+.container {
+  width: 80%;
+  align-items: center;
+>>>>>>> bc61bda43aadae81c661000601d77a01d02e681a
 
 }
 
