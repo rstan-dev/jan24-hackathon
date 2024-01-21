@@ -8,14 +8,14 @@
     {% endfor %}
 
     <div class="container">
-        <h1>Personal Budget App</h1>
+        <h3 class="title">Personal Budget App</h3>
 
         <div class="budget-section">
-            <h2>Enter Your Total Monthly Budget</h2>
+            <h4>Enter Your Total Monthly Budget</h4>
             <input type="number" id="totalBudget" placeholder="Enter Total Budget">
         </div>
 
-        <div class="expenses-section">
+        <div class="expenses-section" method="post" action="{% url 'expense' %}">
             <h2>Monthly Expenses</h2>
             <div id="expenseInputs">
                 <div class="expense-input">
@@ -32,6 +32,8 @@
 
         <div class="summary-section">
             <h2>Budget Summary</h2>
+            <!-- Hidden input to include the category name in the form submission -->
+            <input type="hidden" name="category_name" value="{{ c.friendly_name }}">
             <p id="totalExpenses">Total Expenses: </p>
             <p id="remainingBudget">Remaining Budget: </p>
         </div>
