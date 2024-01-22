@@ -212,3 +212,58 @@ ul.social-networks a:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   filter: grayscale(0%);
 }
+
+/* General Styling */
+.main-container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Header Styling */
+.main-container h1 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2em; /* Adjust font size as needed */
+}
+
+/* Individual Profile Styling */
+.avatar {
+  width: 150px; /* Adjust image size as needed */
+  margin: 10px auto; /* Centers image */
+  display: block;
+  border: 3px solid #333; /* Adds a border around the image */
+}
+
+.about-card-text {
+  font-size: 1em;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* LinkedIn Icon Styling */
+.fab.fa-linkedin {
+  color: #0077b5; /* LinkedIn brand color */
+  font-size: 24px; /* Adjust icon size as needed */
+  margin-left: 10px;
+}
+
+/* Hover Effects */
+.avatar:hover, .fab.fa-linkedin:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 768px) {
+  .avatar {
+      width: 120px; /* Smaller image size for smaller devices */
+  }
+  .about-card-text {
+      font-size: 0.9em;
+  }
+}
+
+@media (max-width: 576px) {
+  .avatar {
+      width: 100px; /* Even smaller image size for very small devices */
+  }
+}
