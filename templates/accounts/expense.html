@@ -10,10 +10,10 @@
             <h2>Expenses Planner</h2><br>
             <small>Do you like to plan ahead? Our planner will help you!</small><br>
             <div class="summary-section">
-                <form method="POST" action="{% url 'planner' %}">
+                <form calss="container-profile"  method="POST" action="{% url 'planner' %}">
                      {% csrf_token %}
                      <table>
-                        <thead>
+                        <thead class="header-table">
                             <tr>
                                 <th>Category</th>
                                 <th>How much do you plan to spend?</th>
