@@ -10,13 +10,14 @@
             {% csrf_token %}
             {{ form.as_p }}
             <div class="budget-section">
-                <h2>Enter Your Monthly Budget</h2>
-                <input type="number" id="totalBudget" placeholder="Enter Total Budget" name="total_budget" value="0" 
+                <h2>Enter Your Monthly Budget</h2><br>
+                <small>How much can you spend?</small><br>
+                <input type="number" id="totalBudget" placeholder="Enter Total Budget" name="total_budget" value="{{ total_budget }}" 
                     min="0" max="100000">
             </div>
 
             <div class="expenses-section">
-                <h2>Monthly Expenses</h2>
+                <h2>Add an Expense</h2>
                 <div id="expenseInputs">
                     <div class="expense-input">
                         <label>Category:</label>
@@ -27,7 +28,7 @@
                         </select>
                         <!-- <label>Amount:</label> -->
                         <input type="number" class="expenseAmount" placeholder="Enter amount" name="expense_amount" value="0" 
-                        min="0" max="100000">
+                            min="0" max="100000">
                     </div>
                 </div>
             </div>
@@ -37,7 +38,8 @@
         </form>
         </div>
         <div class="summary-section">
-            <h2>Budget Summary</h2>
+            <h2>Budget Summary</h2><br>
+            <small>This summary shows how much you already spent and what is left. Here you can always update the categories, amount or completely delete the expense by using 0 in the field.</small><br><br>
             {% if expenses %}
                 <p> Budget: £{{ total_budget }}</p>
                 <p id="totalExpenses">Total Expenses: £{{ total_expenses }} </p>
@@ -46,10 +48,10 @@
                 {% for x,y in expenses.items %}
                     <form method="POST" action="adjust_budget/">
                         {% csrf_token %}    
-                        <p id="usedCategory"><strong>{{ x }}</strong></p>
+                        <p id="usedCategory">In category <strong>{{ x }}</strong> you spent <strong>£{{ y }}</strong></p>
                         <input type="hidden" name="used_category" value="{{ x }}">
                         <input type="text" id="newAmount" value="{{ y }}" name="new_amount" 
-                        min="0" max="100000">
+                            min="0" max="100000">
                         <input type="submit" value="Update" id="adjust">
                     </form>
                     <hr>
