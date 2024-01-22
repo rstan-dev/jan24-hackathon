@@ -10,5 +10,4 @@ urlpatterns = [
     
     path('expense_summary/', views.expenses, name='expense'),
     path('saving_summary/', views.savings, name='saving'),
-
 ]
