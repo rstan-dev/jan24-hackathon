@@ -62,7 +62,7 @@ input[type="number"] {
 }
 
 input[type="submit"],button[type="submit"] {
-  font-size: 2.5rem;
+  font-size: 2rem;
   width: 200px;
   padding: 10px;
   background: #427d2a;

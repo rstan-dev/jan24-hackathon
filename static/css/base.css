@@ -88,7 +88,11 @@ border: 1px green solid;
   font-size: 2rem;
 }
 
-
+@media (max-width:768px){
+  .nav-container{
+    min-width: 100%;
+  }
+}
 
 
 /*END NAV CSS*/
