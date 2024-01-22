@@ -23,11 +23,11 @@ def update_budget(request):
     total_budget = int(request.POST.get('total_budget'))
     redirect_url = request.POST.get('redirect_url')
     amount = int(request.POST.get('expense_amount'))
-    
+
     expenses = request.session.get('expenses', {})
 
     category_name = str(request.POST.get('categories'))
-    
+
     if category_name in list(expenses.keys()):
         expenses[category_name] += amount
     else:
@@ -47,7 +47,7 @@ def adjust_budget(request):
     redirect_url = request.POST.get('redirect_url')
 
     expenses = request.session.get('expenses', {})
-    
+
     if new_amount > 0:
         expenses[category] = new_amount
     else:
@@ -119,4 +119,10 @@ def calculate_total_saving(post_data, category_name):
                 pass  # Ignore invalid values
 
     return total_saving
+
+# Sam's Page:
+def about(request):
+    """ A view to show the about us page """
+
+    return render(request, 'accounts/about.html')
 
