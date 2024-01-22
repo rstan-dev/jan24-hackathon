@@ -169,6 +169,17 @@ border: 1px green solid;
     color: rgb(9, 102, 14)
 }
 
+.footer-text {
+  font-size: 15px;
+  margin: 0;
+  font-family: fantasy;
+  color:#8B572A;
+ }
+
+ .footer-text:hover {
+   color: rgb(9, 102, 14)
+ }
+
 ul.social-networks {
   list-style: none;
   padding: 20px;
