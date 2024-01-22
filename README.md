@@ -36,6 +36,24 @@ The target audience includes individuals of all ages and backgrounds who want a 
 5. **Security and Privacy:**
    - Secure user authentication and data encryption ensure the confidentiality of personal and financial information that adheres to the legislation around privacy and control over how their data is stored and used.
 
+## Features
+
+The THriveWallet site can be reached using the byline hyperlkink above or [here](https://thrive-wallet-b5a54babd69b.herokuapp.com/ "ThriveWallet") 
+
+- Login with sign In and Sign up options
+>Insert Image here
+
+- Budget Calculator
+>Insert Image here
+
+- Budget Summary
+>Insert Image here
+
+- About Us page
+>Insert Image here
+
+
+
 ## Tech
 HTML, CSS, Javascript, Python, Django, PostgreSQL, Miro, Bootstrap, DALL.E 3
 
@@ -47,7 +65,7 @@ You can access our project on GitHub [here](https://github.com/rstan-dev/jan24-h
 ![GitHub forks](https://img.shields.io/github/forks/rstan-dev/jan24-hackathon?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/rstan-dev/jan24-hackathon?style=social)
 
-
+## Known Issues
 
 ## Credits
 The following resources were used:
