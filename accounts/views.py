@@ -95,6 +95,12 @@ def expense_planner_function(request):
 
     return render(request, 'accounts/expense.html', context)
 
+def savings(request):
+    """ A view to show the savings tempalte """
+
+
+    return render(request, 'accounts/saving.html')
+
 
 # Bekry:
 def expenses(request):
@@ -155,4 +161,3 @@ def calculate_total_saving(post_data, category_name):
                 pass  # Ignore invalid values
 
     return total_saving
-
