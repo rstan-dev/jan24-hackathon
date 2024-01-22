@@ -108,11 +108,13 @@ border: 1px green solid;
 }
 
 .icon-container{
+  width:50%;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
   align-items: center;
   margin: 0 auto;
-  width: 60%;
+  gap: 20px;
+ 
 }
 
 .icon-text > h3 {
@@ -121,9 +123,22 @@ border: 1px green solid;
 }
 
 @media (max-width:768px){
-  .icon-container{
-    width: 80%;
+
+  .nav-container{
+    width: 100%;
   }
+
+
+  .icon-container{
+    width: 60%;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  .icon-text > h3{
+    font-size: 1.5rem;
+  }
+
+  
 }
 
 

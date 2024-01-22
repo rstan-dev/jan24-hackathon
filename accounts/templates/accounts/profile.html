@@ -1,44 +1,66 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 <div class="container">
-  <h1>Personal Budget App</h1>
-
   <form class="form" action="{% url 'update_budget' %}" method="POST">
     {% csrf_token %} {{ form.as_p }}
 
-{% block content %}
-    {% for c in categories %}
+    <!-- {% for c in categories %}
         {{ c.friendly_name }}
-    {% endfor %}
+    {% endfor %} -->
 
     <div class="container">
-        <h3 class="title">Personal Budget App</h3>
+      <h3 class="title">Personal Budget App</h3>
 
-        <div class="budget-section">
-            <h4>Enter Your Monthly Budget</h4>
-            <input type="number" id="totalBudget" placeholder="Enter Total Budget">
+      <div class="budget-section">
+        <h2>Enter Your Monthly Budget</h2>
+        <input
+          type="number"
+          id="totalBudget"
+          placeholder="Enter Total Budget"
+        />
+      </div>
+
+      <div class="expenses-section" method="post" action="{% url 'expense' %}">
+        <h2>Monthly Expenses</h2>
+      </div>
+      <div id="expenseInputs" class="categiries-container display_flex">
+        <div class="expense-input">
+          <label>Category:</label>
+          <input
+            type="text"
+            class="expenseCategory"
+            placeholder="Enter category"
+          />
         </div>
-
-        <div class="expenses-section" method="post" action="{% url 'expense' %}">
-            <h2>Monthly Expenses</h2>
-            <div id="expenseInputs">
-                <div class="expense-input">
-                    <label>Category:</label>
-                    <input type="text" class="expenseCategory" placeholder="Enter category">
-                    <label>Amount:</label>
-                    <input type="number" class="expenseAmount" placeholder="Enter amount">
-                </div>
-            </div>
-            <button onclick="addExpenseInput()">Add Another Expense</button>
+        <div class="expense-input"> 
+            <label>Amount:</label>
+          <input
+            type="number"
+            class="expenseAmount"
+            placeholder="Enter amount"
+          />
         </div>
+      </div>
 
-        <button onclick="calculateBudget()">Calculate</button>
+      <div class="buttons-container">
+        <button class="button large" onclick="addExpenseInput()">
+          Add Another Expense
+        </button>
+        <button class="button" onclick="calculateBudget()">Calculate</button>
+      </div>
 
-        <div class="summary-section">
-            <h2>Budget Summary</h2>
-            <!-- Hidden input to include the category name in the form submission -->
-            <input type="hidden" name="category_name" value="{{ c.friendly_name }}">
-            <p id="totalExpenses">Total Expenses: </p>
-            <p id="remainingBudget">Remaining Budget: </p>
-        </div>
+      <div class="summary-section">
+        <h2>Budget Summary</h2>
+        <!-- Hidden input to include the category name in the form submission -->
+        <input
+          type="hidden"
+          name="category_name"
+          value="{{ c.friendly_name }}"
+        />
+        <p id="totalExpenses">Total Expenses:</p>
+        <p id="remainingBudget">Remaining Budget:</p>
+      </div>
     </div>
-{% endblock %}
+
+    {% endblock %}
+  </form>
+</div>

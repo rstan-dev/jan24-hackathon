@@ -1,6 +1,21 @@
+/*Globals*/
+html{
+  min-width: 100%;
+}
 
 
+/*Utilities*/
+.display_flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+}
+.large {
+  width: 300px;
+}
+/*-----------------------------------------*/
 body {
+  margin: 0 auto;
   min-height: 100vh;
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -11,11 +26,9 @@ body {
 .container {
   width: 80%;
   margin: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-align: center;
 }
-
-
 
 .title {
   text-align: center;
@@ -24,11 +37,18 @@ body {
   font-size: 4rem;
   color: cadetblue;
 }
+.categiries-container {
+  width: 80%;
+  margin: 20px auto;
+}
+.categiries-container > div {
+  flex: 1 1 300px;
+}
 
-.summary-section > p{
+.summary-section > p {
   font-size: 2.5rem;
 }
-.summary-section > h2{
+.summary-section > h2 {
   color: #427d2a;
   text-shadow: white 2px 3px 3px;
 }
@@ -42,37 +62,30 @@ body {
   -webkit-backdrop-filter: blur(5.6px);
   border: 1px solid rgba(255, 255, 255, 0.47);
 }
-.category-title{
+.category-title {
   font-size: 2.5rem;
 }
-.labes-container{
-  display: flex;
-  flex-wrap: wrap;
-}
-.labes-container > div{
-  flex: 1 1 500px;
-  height: 200px;
-}
-input[type="number"]{
+
+input[type="number"] {
   width: 70%;
   padding: 10px;
-  margin: 10px 0;
 }
-input[type="text"]{
+input[type="text"] {
+  width: 70%;
   padding: 10px;
 }
-select{
+select {
   width: 200px;
   padding: 10px;
   margin-bottom: 20px;
 }
 
-label{
+label {
   font-size: 2rem;
   color: #427d2a;
 }
 
-.button{
+.button {
   font-size: 2rem;
   width: 200px;
   padding: 10px;
@@ -80,7 +93,7 @@ label{
   color: #fff;
   border: none;
   cursor: pointer;
-  transition: all .5s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
@@ -89,5 +102,61 @@ label{
   border: #427d2a solid 1px;
   box-shadow: #333 2px 3px 3px;
   scale: 0.9;
-  transition: all .5s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
+
+.buttons-container {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  gap: 10px;
+}
+
+.buttons-container > button {
+  flex: 1 1 calc(50% - 10px);
+}
+
+/*media query 768px*/
+
+@media (max-width: 1280px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+   .expense-input {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h2{
+    font-size: 2rem;
+  }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+   .expense-input, .buttons-container {
+  width: 100%;
+  }
+  input[type="number"], input[type="text"]{
+    width: 90%;
+  }
+  .form{
+    padding: 15px;
+  }
+ 
+}
+
+@media (max-width:412px){
+  .buttons-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+}
+
