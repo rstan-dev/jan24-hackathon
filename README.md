@@ -38,7 +38,7 @@ The target audience includes individuals of all ages and backgrounds who want a 
 
 ## Features
 
-The THriveWallet site can be reached using the byline hyperlkink above or [here](https://thrive-wallet-b5a54babd69b.herokuapp.com/ "ThriveWallet") 
+The ThriveWallet site can be reached using the byline hyperlink above or [here](https://thrive-wallet-b5a54babd69b.herokuapp.com/ "ThriveWallet") 
 
 - Login with sign In and Sign up options
 >Insert Image here
