@@ -8,6 +8,7 @@
 {% block content %}
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="/static/css/sigin-up.css">
+<link rel="stylesheet" href="/static/css/budget.css">
 
 <div class="sing-in-container">
 <h3 class="form-title">{% trans "Sign In" %}</h3>
@@ -44,7 +45,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   {% endif %}
   <div class="display-block">
     <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+  <button class="primaryAction button" type="submit">{% trans "Sign In" %}</button>
   </div>
   
 </form>

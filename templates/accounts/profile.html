@@ -2,9 +2,10 @@
 {% load static %}
 
 {% block content %}
-    <div class="container">
-        <h1>Personal Budget App</h1>
-
+<h1>Personal Budget App</h1>
+    <div class="container-profile">
+        
+        <div class="form-container">
         <form class="form" action="{% url 'update_budget' %}" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
@@ -24,17 +25,17 @@
                                 <option value="{{ c.friendly_name }}" id="category">{{ c.friendly_name }}</option>
                             {% endfor %}
                         </select>
-                        <label>Amount:</label>
+                        <!-- <label>Amount:</label> -->
                         <input type="number" class="expenseAmount" placeholder="Enter amount" name="expense_amount" value="0" 
                         min="0" max="100000">
                     </div>
                 </div>
             </div>
 
-            <input type="submit" value="Add Expense">
+            <input class="button" type="submit" value="Add Expense">
             <input type="hidden" name="redirect_url" value="{{ request.path }}">
         </form>
-
+        </div>
         <div class="summary-section">
             <h2>Budget Summary</h2>
             {% if expenses %}
@@ -54,7 +55,7 @@
                     <hr>
                 {% endfor %}
             {% else %}
-                    <p>You have not added any expenses yet.</p>
+                    <p class="no-expenses">You have not added any expenses yet.</p>
             {% endif %}
         </div>
     </div>

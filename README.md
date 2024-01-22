@@ -39,3 +39,10 @@ In the tech section, we provide information about the technology stack, dependen
 
 ## Credits
 In the credits section, we provide information about the sources used
+
+# colors
+Rich Green (#4C9A2A): Symbolizes growth and financial prosperity.
+Earthy Brown (#8B572A): Represents stability and trust.
+Vibrant Gold (#D4AF37): Conveys success and wealth.
+Soft Gray (#9B9B9B): Provides balance and sophistication.
+Subtle Blue (#4A90E2): Reflects reliability and confidence.

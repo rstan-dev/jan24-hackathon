@@ -15,12 +15,14 @@
     margin: 0 auto;
     max-width: 80%;
     width: fit-content;
+    background-color: #9c1515;
     background:linear-gradient(to top left ,rgb(21, 73, 28), rgb(205, 233, 215)60%);;
     text-align: center;
     padding: 80px;
     border: solid black 1px;
     box-shadow: 3px 2px 4px gray;
 }
+
 
 .form-title{
     font-family: fantasy;
