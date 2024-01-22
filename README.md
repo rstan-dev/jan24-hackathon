@@ -1,15 +1,17 @@
 ![ThriveWallet brandname](./static/media/Version3_LinearBrandNameandLogo.png)
-## Intro
-**Hackathon Team 4, 'The BUDJ€T€€RS', developed this invaluable tool for Users to achieve their New Year's financial resolutions to save as much money as possible in 2024.** 
+## [*Your catalyst for financial growth and success*](https://thrive-wallet-b5a54babd69b.herokuapp.com/ "ThriveWallet")
 
-This project has been developed as part of a Code Institute hosted hackathon. It is not for profit or to make any financial gain.
+## Intro
+**ThriveWallet was developed by Hackathon Team 4, 'The BUDJ€T€€RS', as an invaluable tool to enable users to track thier finances efficiently and achieve their New Year's financial resolution to save as much money as possible in 2024.** 
+
+*This project has been developed as part of a Code Institute hosted hackathon. It is not for profit or to make any financial gain.*
 
 # Site Goals
-# Test Change
+
 ## Deliver an expense management app.
 
 ### Problem Statement
-Many individuals struggle to effectively track and manage their expenses, leading to financial stress and difficulties in budgeting.
+Many individuals struggle to effectively track and manage their expenses, leading to financial stress and difficulties in saving efficiently.
 
 ### Objectives
 - Develop an app that empowers users to track, categorize, and analyze their expenses effortlessly.
@@ -35,7 +37,16 @@ The target audience includes individuals of all ages and backgrounds who want a 
    - Secure user authentication and data encryption ensure the confidentiality of personal and financial information that adheres to the legislation around privacy and control over how their data is stored and used.
 
 ## Tech
-In the tech section, we provide information about the technology stack, dependencies, and any technical details related to the project.
+HTML, CSS, Javascript, Python, Django, PostgreSQL, Miro, Bootstrap, DALL.E 3
+
+You can access our project on GitHub [here](https://github.com/rstan-dev/jan24-hackathon "ThriveWallet Project")
+
+
 
 ## Credits
-In the credits section, we provide information about the sources used
+The following resources were used:
+1. [Google](https://www.google.com/ "Google")
+2. [ChatGPT-3.5 and ChatGPT-4](https://chat.openai.com/ "ChatGPT")
+3. [The Code Institute](https://codeinstitute.net/full-stack-software-development-diploma/?utm_term=the%20code%20institute&utm_campaign=CI+-+UK+-+Search+-+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=1578649861&hsa_grp=62188641240&hsa_ad=635720257674&hsa_src=g&hsa_tgt=kwd-572567981978&hsa_kw=the%20code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQiAwbitBhDIARIsABfFYILuXWM0fanFTlFcwI7ku6NJMSLl7B0mwo44q2y6L7BWgHUs3N8FYJAaAkKUEALw_wcB "Code Institute") course projects
+
+The BUDJ€T€€RS team:
