@@ -199,9 +199,10 @@ border: 1px green solid;
 }
 
 .footer-text {
-  font-size: 16px; /* Set the font size for the <p> element */
-  margin: 0; /* Remove default margin */
-  color:cadetblue;
+  font-size: 15px;
+  margin: 0;
+  font-family: fantasy;
+  color:#4A90E2;
 }
 
 .footer-text a:hover {
@@ -224,9 +225,30 @@ ul.social-networks li {
 
 ul.social-networks a {
   text-decoration: none;
-  color:cadetblue; /* Add your preferred link color */
+  color:#4A90E2;
 }
 
 ul.social-networks a:hover {
-  color: rgb(9, 102, 14);
+  color: #4C9A2A;
+}
+
+
+/* About us page */
+.about-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+  border: 5px solid white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.3);
+}
+
+.avatar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  filter: grayscale(0%);
 }
