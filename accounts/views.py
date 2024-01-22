@@ -55,23 +55,45 @@ def adjust_budget(request):
 
     # overwrite the variable with the updated version
     request.session['expenses'] = expenses
-    print(expenses)
 
     return redirect(reverse('profile'))
 
 
 def expense_planner_function(request):
     """ """
+    
+    categories = Category.objects.all()
 
     expenses = request.session.get('expenses', {})
+    redirect_url = request.POST.get('redirect_url')
+    
+    left_amounts = request.session.get('left_amounts', {})
+    expense_planner_amounts = request.session.get('expense_planner_amounts', {})
 
-    expense_planner_amount = int(request.POST.get('expense_planner_amount'), 0)
-    already_spent = int(request.POST.get('already_spent'), 0)
-    left_amount = int(request.POST.get('left_amount', 0))
+    for category, amount in expenses.items():
+        expense_planner_amount = int(request.POST.get(f'expense_planner_amount_{category}', 0))
+        left_amount = expense_planner_amount - amount
+        left_amounts[category] = left_amount
+        expense_planner_amounts[category] = expense_planner_amount
+    
+    # overwrite the variables with the updated version
+    request.session['left_amounts'] = left_amounts
+    request.session['expense_planner_amounts'] = expense_planner_amounts
+    # request.session['expense_planner_amount'] = expense_planner_amount
 
-    left_amount = expense_planner_amount - already_spent
+    total_left = sum(left_amounts.values())
 
-    return redirect(reverse('expense'))
+    context = {
+        'expense_planner_amount_category': expense_planner_amount,
+        'amount': amount,
+        'left_amount': left_amount,
+        'left_amounts': left_amounts,
+        'category': category,
+        'expense_planner_amounts': expense_planner_amounts,
+        'total_left': total_left,
+    }
+
+    return render(request, 'accounts/expense.html', context)
 
 
 # Bekry:

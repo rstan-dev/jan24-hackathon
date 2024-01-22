@@ -14,9 +14,6 @@
                     <p id="categoryName"><strong>{{ c }}</strong>: £{{ a }}</p>
                 </div>
                 {% endfor %}
-                {% if total_expenses %}
-                    <p id="totalExpenses">{{ total_expenses }}</p>
-                {% endif %}
             </div>
         </div>
     </div>
@@ -26,9 +23,9 @@
             <h2>Expenses Planner</h2><br>
             <small>Do you like to plan ahead? Our planner will help you!</small><br>
             <div class="summary-section">
-                <form method="POST" action="expense_planner/">
-                    {% csrf_token %}
-                    <table>
+                <form method="POST" action="{% url 'planner' %}">
+                     {% csrf_token %}
+                     <table>
                         <thead>
                             <tr>
                                 <th>Category</th>
@@ -37,37 +34,54 @@
                                 <th>Left amount</th>
                             </tr>
                         </thead>
-
-                        {% for c in categories %}
+                        {% for category, amount in expenses.items %}
                             <tr>
-                                <td>
-                                    <span>{{ c.friendly_name }}</span>
+                                <td>{{ category }}
+                                    <input type="hidden" name="used_category" value="{{ category }}">
                                 </td>
                                 <td>
-                                    <input type="number" class="expensePlannerAmount" placeholder="" name="expense_planner_amount" value="{{ expense_planner_amount }}" 
-                                        min="0" max="100000">
-                                </td>
-                                <td>
-                                    <span class="already_spent">
-                                        {% for x, y in expenses.items %}
-                                            {% if x == c.friendly_name %}
-                                                {{ y }}
+                                    {% if expense_planner_amounts %}
+                                        {% for x, y in expense_planner_amounts.items %}
+                                            {% if category == x %}
+                                                <input type="number" class="expensePlannerAmount" placeholder="" name="expense_planner_amount_{{ category }}" value="{{ y }}" 
+                                                min="0" max="100000">
                                             {% endif %}
                                         {% endfor %}
-                                        <input type="hidden" name="already_spent" value="{{ already_spent }}">
-                                    </span>
+                                    {% else %}
+                                        <input type="number" class="expensePlannerAmount" placeholder="" name="expense_planner_amount_{{ category }}" value="" 
+                                            min="0" max="100000">
+                                    {% endif %}
                                 </td>
                                 <td>
-                                    <span class="left_amount">
-                                        {% if left_amount %}
-                                            {{ left_amount }}
+                                    £{{ amount }}
+                                    <input type="hidden" name="amount" value="{{ amount }}">
+                                </td>
+                                <td>
+                                    {% for x, y in left_amounts.items %}
+                                        {% if category == x %}
+                                            £{{ y }}
+                                            <input type="hidden" name="left_amounts" value="{{ left_amounts.category }}">
                                         {% endif %}
-                                        <input type="hidden" name="left_amount" value="{{ left_amount }}">
-                                    </span>
+                                    {% endfor %}
                                 </td>
                             </tr>
                         {% endfor %}
-                    </table><br>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    {% if total_expenses %}
+                                        <p id="totalExpenses"><strong>£{{ total_expenses }}</strong></p>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if left_amounts %}
+                                        <p><strong>£{{ total_left }}</strong></p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </table>
+                        
                     <input type="submit" value="Calculate"><br>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}"><br>
                 </form>
