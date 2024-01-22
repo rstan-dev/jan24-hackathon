@@ -38,7 +38,7 @@ The target audience includes individuals of all ages and backgrounds who want a 
 5. **Security and Privacy:**
    - Secure user authentication and data encryption ensure the confidentiality of personal and financial information that adheres to the legislation around privacy and control over how their data is stored and used.
 
-## Features
+### Features
 
 The ThriveWallet site can be reached using the byline hyperlink above or [here](https://thrive-wallet-b5a54babd69b.herokuapp.com/ "ThriveWallet") 
 
