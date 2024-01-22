@@ -13,11 +13,10 @@
 
 .sing-in-container{
     margin: 0 auto;
-    max-width: 80%;
     width: fit-content;
     background:linear-gradient(to top left ,rgb(21, 73, 28), rgb(205, 233, 215)60%);;
     text-align: center;
-    padding: 80px;
+    padding: 100px;
     border: solid black 1px;
     box-shadow: 3px 2px 4px gray;
 }
@@ -29,14 +28,22 @@
     text-shadow: white 3px 2px 2px;
 }
 .sign-up-text{
-    margin: 10px auto;
-    max-width: 300px;
-  
+    margin: 10px auto; 
 }
-.signup{
-    display: flex;
-    flex-direction: column;
-    align-items: self-end;
+.signup > p{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+input[type="password"]{
+    padding: 10px;
+    width: 70%;
+}
+
+.signup  input{
+    padding: 10px;
+    width: 100%;
 }
 
 @media (max-width:768px){
@@ -48,13 +55,21 @@
 
 @media (max-width:530px){
     .sing-in-container{
-        margin-bottom: 20px;
-        padding: 70px;
+        width: 90%;
+        padding:20px;
+        max-width: 100%;
     }
-    .signup{
-        display: grid;
+    .login > p {
+        margin:0 auto ; 
+        display:grid;
         justify-content: center;
-        place-content: center;
-        padding: 15px;
+        align-content: center;
+        text-align: center;
+        
     }
+    input[type="password"],input[type="text"]{
+        padding: 10px;
+        width: 100%;
+    }
+   
 }
