@@ -49,20 +49,60 @@ h2{
 .budget-section,
 .expenses-section,
 .summary-section {
-  /* background: #fff; */
-
-  margin: 10px 0;
+  margin: 10px auto;
+  text-align: center;
 }
+.summary-section{
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.21);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.6px);
+  -webkit-backdrop-filter: blur(5.6px);
+  border: 1px solid rgba(255, 255, 255, 0.47);
+}
+table{
+  margin: 0 auto;
+  width: 100%;
+  text-align: left;
+}
+thead{
+  margin: 0 auto;
+}
+
+/*Responsive table*/
+@media (max-width:768px){
+  table{
+    text-align: right;
+    display: flex;
+  }
+  thead > tr, tbody > tr{
+    display: grid;
+    grid-template-columns: repeat(1, 4);
+  }
+  thead > tr{
+    justify-content: center;
+    align-items: center;
+  }
+
+  /*expensis section*/
+  .summary-section{
+    width: 100%;
+  }
+  
+}
+
+
 
 input[type="number"] {
   width: 70%;
-  padding: 10px;
+  /* padding: 10px; */
   margin: 10px 0;
-  font-size:large;
+  font-size:2rem;
 }
 
 input[type="submit"],button[type="submit"] {
-  font-size: 2rem;
+  font-size:2rem;
   width: 200px;
   padding: 10px;
   background: #427d2a;
@@ -84,6 +124,9 @@ select{
 }
 .expense-input{
   padding: 10px 0 10px;
+}
+.expensePlannerAmount{
+  padding: 0px;
 }
 
 
@@ -110,15 +153,6 @@ select{
   }
 }
 
-/*EXPENSES PAGE ________________________*/
-
-form{
-
-}
-
-.header-table{
-
-}
-.summary-section{
-  
+.form-expenses-container{
+  background-color: #8B572A;
 }

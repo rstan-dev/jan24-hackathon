@@ -3,14 +3,14 @@
 
 {% block content %}
 
-
+<link rel="stylesheet" href="/static/css/budget.css">
 
     <div class="container">
         <div class="budget-section">
             <h2>Expenses Planner</h2><br>
             <small>Do you like to plan ahead? Our planner will help you!</small><br>
             <div class="summary-section">
-                <form calss="container-profile"  method="POST" action="{% url 'planner' %}">
+                <form calss="form-expenses-container"  method="POST" action="{% url 'planner' %}">
                      {% csrf_token %}
                      <table>
                         <thead class="header-table">
