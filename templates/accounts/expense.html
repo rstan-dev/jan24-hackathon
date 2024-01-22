@@ -3,20 +3,7 @@
 
 {% block content %}
 
-    <div class="container">
-        <h2>Expenses</h2>
 
-        <div class="expenses-section">
-            <h2>Monthly Expenses</h2>
-            <div id="expenseInputs">
-                {% for c, a in expenses.items %}
-                <div class="summary-section">
-                    <p id="categoryName"><strong>{{ c }}</strong>: £{{ a }}</p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
 
     <div class="container">
         <div class="budget-section">
