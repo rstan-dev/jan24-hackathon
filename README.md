@@ -41,6 +41,12 @@ HTML, CSS, Javascript, Python, Django, PostgreSQL, Miro, Bootstrap, DALL.E 3
 
 You can access our project on GitHub [here](https://github.com/rstan-dev/jan24-hackathon "ThriveWallet Project")
 
+![GitHub all releases](https://img.shields.io/github/downloads/rstan-dev/jan24-hackathon/total)
+![GitHub top language](https://img.shields.io/github/languages/top/rstan-dev/jan24-hackathon?color=yellow)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/rstan-dev/jan24-hackathon)
+![GitHub forks](https://img.shields.io/github/forks/rstan-dev/jan24-hackathon?style=social)
+![GitHub Repo stars](https://img.shields.io/github/stars/rstan-dev/jan24-hackathon?style=social)
+
 
 
 ## Credits
