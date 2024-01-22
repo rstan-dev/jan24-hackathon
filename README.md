@@ -43,16 +43,21 @@ The target audience includes individuals of all ages and backgrounds who want a 
 The ThriveWallet site can be reached using the byline hyperlink above or [here](https://thrive-wallet-b5a54babd69b.herokuapp.com/ "ThriveWallet")
 
 - Login with sign In and Sign up options
->Insert Image here
+<br>
+
+![Login Image](./docs/SignInandUp.png)
 
 - Budget Calculator
->Insert Image here
+
+ ![Budget Calculator](./docs/BudgetCalculator.png)
 
 - Budget Summary
->Insert Image here
+
+![Budget Summary](./docs/BudgetSummary.png)
 
 - About Us page
->Insert Image here
+
+![About Us](./docs/AboutUs.png)
 
 ## Brand Identity
 
@@ -76,7 +81,15 @@ Our brand identity was generated with AI assistance from OpenAI's ChatGPT 3.5 an
 
 
 ## Tech
-HTML, CSS, Javascript, Python, Django, PostgreSQL, Miro, Bootstrap, DALL.E 3
+1. HTML,
+2. CSS,
+3. Javascript,
+4. Python,
+5. Django,
+6. PostgreSQL,
+6. Miro,
+7. Bootstrap,
+8. DALL.E 3
 
 You can access our project on GitHub [here](https://github.com/rstan-dev/jan24-hackathon "ThriveWallet Project")
 
