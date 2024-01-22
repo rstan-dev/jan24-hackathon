@@ -52,6 +52,24 @@ The ThriveWallet site can be reached using the byline hyperlink above or [here](
 - About Us page
 >Insert Image here
 
+## Brand Identity
+
+Our brand identity was generated with AI assistance from OpenAI's ChatGPT 3.5 and 4 and DALL.E 3. It consists of multiple visual options of the brand name and logo, the byline and a colour pallette:
+
+ Brand name and Logo options:
+![ThriveWallet brandname](./static/media/Version3_LinearBrandNameandLogo.png)
+![ThriveWallet brandname](./static/media/Version3_LogoOnly.png)
+![ThriveWallet brandname](./static/media/Version3_BrandNameOnly_V2.png)
+ Byline:
+## [*Your catalyst for financial growth and success*](https://thrive-wallet-b5a54babd69b.herokuapp.com/ "ThriveWallet")
+
+ Colour pallette:
+1. Rich Green (#4C9A2A): Symbolizes growth and financial prosperity.
+2. Earthy Brown (#8B572A): Represents stability and trust.
+3. Vibrant Gold (#D4AF37): Conveys success and wealth.
+4. Soft Gray (#9B9B9B): Provides balance and sophistication.
+5. Subtle Blue (#4A90E2): Reflects reliability and confidence.
+
 
 
 ## Tech
