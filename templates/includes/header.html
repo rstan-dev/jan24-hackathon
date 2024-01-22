@@ -13,6 +13,7 @@
         <a href="{% url 'home' %}"><img src="{% static 'media/logo.jpg' %}" width="auto"
                 height="auto" alt="static/media/logo.jpg" class="img-fluid"></a> -->
         <div class="logo-container">
+          <img class="logo" src="{% static 'media/Version3_BrandNameOnly_V2.png' %}" alt= "image of project logo" style="z-index: 10;">
           <img class="logo" src="{% static 'media/logo2.png' %}" alt= "image of project logo" style="z-index: 10;">
         </div>
         <!-- End .logo -->
@@ -51,8 +52,8 @@
                 <ul class="nav navbar-nav ">
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'profile' %}">Home</a></li>
-                    <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
                     <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
                     {% else %}
                     <li><a href="{% url 'account_login' %}">Sign In</a></li>
                     <li><a href="{% url 'account_signup' %}">Sign Up</a></li>

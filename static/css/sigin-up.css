@@ -15,12 +15,14 @@
     margin: 0 auto;
     max-width: 80%;
     width: fit-content;
+    background-color: #9c1515;
     background:linear-gradient(to top left ,rgb(21, 73, 28), rgb(205, 233, 215)60%);;
     text-align: center;
     padding: 80px;
     border: solid black 1px;
     box-shadow: 3px 2px 4px gray;
 }
+
 
 .form-title{
     font-family: fantasy;
@@ -34,15 +36,28 @@
   
 }
 .signup{
+    margin: 0 auto;
+    width: fit-content;
     display: flex;
     flex-direction: column;
-    align-items: self-end;
+    align-items: flex-end;
+    justify-content:flex-end;
+}
+.signup > button[type="submit"], .button > button[type="submit"]{
+    margin: 0 auto;
+    align-items: flex-end;
+    justify-content:center;
+    font-size: 2rem;
 }
 
 @media (max-width:768px){
     .sing-in-container{
         margin-bottom: 20px;
         padding: 50px;
+    }
+    .signup > p{
+        display: flex;
+        flex-direction: column;
     }
 }
 

@@ -11,19 +11,21 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import dj_database_url
 from pathlib import Path
 if os.path.exists("env.py"):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY", '')
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -33,6 +35,8 @@ ALLOWED_HOSTS = [
     '8000-rstandev-jan24hackathon-jc3je8awxgz.ws-eu107.gitpod.io',
     '8000-rstandev-jan24hackathon-9y203k5l0m3.ws-eu107.gitpod.io',
     '8000-rstandev-jan24hackathon-zvbwf61zad6.ws-eu107.gitpod.io',
+    'thrive-wallet.herokuapp.com',
+    'thrive-wallet-b5a54babd69b.herokuapp.com',
     ]
 
 
@@ -44,17 +48,20 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'cloudinary',
     'home',
     'accounts',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -68,10 +75,7 @@ ROOT_URLCONF = 'BudgetBusters.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'templates', 'allauth'),
-        ],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,7 +83,7 @@ TEMPLATES = [
                 'django.template.context_processors.request', # required for allauth!
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'accounts.contexts.budget_content', 
+                'accounts.contexts.budget_content',
             ],
         },
     },
@@ -111,12 +115,18 @@ WSGI_APPLICATION = 'BudgetBusters.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+if 'DEV' in os.environ:
+     DATABASES = {
+         'default': {
+             'ENGINE': 'django.db.backends.sqlite3',
+             'NAME': BASE_DIR / 'db.sqlite3',
+         }
+     }
+else:
+     DATABASES = {
+         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+     }
+
 
 
 # Password validation
@@ -156,7 +166,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

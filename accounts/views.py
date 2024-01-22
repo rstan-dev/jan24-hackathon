@@ -23,11 +23,11 @@ def update_budget(request):
     total_budget = int(request.POST.get('total_budget'))
     redirect_url = request.POST.get('redirect_url')
     amount = int(request.POST.get('expense_amount'))
-    
+
     expenses = request.session.get('expenses', {})
 
     category_name = str(request.POST.get('categories'))
-    
+
     if category_name in list(expenses.keys()):
         expenses[category_name] += amount
     else:
@@ -47,7 +47,7 @@ def adjust_budget(request):
     redirect_url = request.POST.get('redirect_url')
 
     expenses = request.session.get('expenses', {})
-    
+
     if new_amount > 0:
         expenses[category] = new_amount
     else:
@@ -55,9 +55,45 @@ def adjust_budget(request):
 
     # overwrite the variable with the updated version
     request.session['expenses'] = expenses
-    print(expenses)
 
     return redirect(reverse('profile'))
+
+
+def expense_planner_function(request):
+    """ """
+    
+    categories = Category.objects.all()
+
+    expenses = request.session.get('expenses', {})
+    redirect_url = request.POST.get('redirect_url')
+    
+    left_amounts = request.session.get('left_amounts', {})
+    expense_planner_amounts = request.session.get('expense_planner_amounts', {})
+
+    for category, amount in expenses.items():
+        expense_planner_amount = int(request.POST.get(f'expense_planner_amount_{category}', 0))
+        left_amount = expense_planner_amount - amount
+        left_amounts[category] = left_amount
+        expense_planner_amounts[category] = expense_planner_amount
+    
+    # overwrite the variables with the updated version
+    request.session['left_amounts'] = left_amounts
+    request.session['expense_planner_amounts'] = expense_planner_amounts
+    # request.session['expense_planner_amount'] = expense_planner_amount
+
+    total_left = sum(left_amounts.values())
+
+    context = {
+        'expense_planner_amount_category': expense_planner_amount,
+        'amount': amount,
+        'left_amount': left_amount,
+        'left_amounts': left_amounts,
+        'category': category,
+        'expense_planner_amounts': expense_planner_amounts,
+        'total_left': total_left,
+    }
+
+    return render(request, 'accounts/expense.html', context)
 
 
 # Bekry:
@@ -119,4 +155,10 @@ def calculate_total_saving(post_data, category_name):
                 pass  # Ignore invalid values
 
     return total_saving
+
+# Sam's Page:
+def about(request):
+    """ A view to show the about us page """
+
+    return render(request, 'accounts/about.html')
 

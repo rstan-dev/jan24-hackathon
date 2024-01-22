@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="/static/css/budget.css">
+
+    <div class="container">
+        <div class="budget-section">
+            <h2>Expenses Planner</h2><br>
+            <small>Do you like to plan ahead? Our planner will help you!</small><br>
+            <div class="summary-section">
+                <form calss="form-expenses-container"  method="POST" action="{% url 'planner' %}">
+                     {% csrf_token %}
+                     <table>
+                        <thead class="header-table">
+                            <tr>
+                                <th>Category</th>
+                                <th>How much do you plan to spend?</th>
+                                <th>Already spent</th>
+                                <th>Left amount</th>
+                            </tr>
+                        </thead>
+                        {% for category, amount in expenses.items %}
+                            <tr>
+                                <td>{{ category }}
+                                    <input type="hidden" name="used_category" value="{{ category }}">
+                                </td>
+                                <td>
+                                    {% if expense_planner_amounts %}
+                                        {% for x, y in expense_planner_amounts.items %}
+                                            {% if category == x %}
+                                                <input type="number" class="expensePlannerAmount" placeholder="" name="expense_planner_amount_{{ category }}" value="{{ y }}"
+                                                min="0" max="100000">
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% else %}
+                                        <input type="number" class="expensePlannerAmount" placeholder="" name="expense_planner_amount_{{ category }}" value=""
+                                            min="0" max="100000" required>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    £{{ amount }}
+                                    <input type="hidden" name="amount" value="{{ amount }}">
+                                </td>
+                                <td>
+                                    {% for x, y in left_amounts.items %}
+                                        {% if category == x %}
+                                            £{{ y }}
+                                            <input type="hidden" name="left_amounts" value="{{ left_amounts.category }}">
+                                        {% endif %}
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    {% if total_expenses %}
+                                        <p id="totalExpenses"><strong>£{{ total_expenses }}</strong></p>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if left_amounts %}
+                                        <p><strong>£{{ total_left }}</strong></p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </table>
+
+                    <input type="submit" value="Calculate"><br>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}"><br>
+                </form>
+
+                <p>Don't forget your total budget is <strong>£{{ total_budget }}</strong>, so plan accordingly!</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

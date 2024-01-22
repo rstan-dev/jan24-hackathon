@@ -1,4 +1,4 @@
-@keyframes spin { 
+@keyframes spin {
   0%{
     transform: rotateY(0deg);
   }
@@ -29,7 +29,7 @@
 
 
 
-/* 
+/*
 @keyframes mymove {
   from {
     top: 0px;
@@ -59,7 +59,7 @@
 h1 {
   font-size: 4rem;
   font-family: fantasy;
-  color: cadetblue;
+  color: #4C9A2A;
 }
 
 
@@ -88,6 +88,11 @@ border: 1px green solid;
   font-size: 2rem;
 }
 
+@media (max-width:768px){
+  .nav-container{
+    min-width: 100%;
+  }
+}
 
 
 /*END NAV CSS*/
@@ -104,6 +109,19 @@ border: 1px green solid;
   margin: 0 auto;
   max-width: 150px;
   height: max-content;
+  color: #8B572A;
+}
+
+.image-icon:hover{
+  color: #4C9A2A;
+}
+@media (max-width:480px){
+  .image-icon{
+    max-width: 100px;
+  }
+  container{
+    min-width: 100%;
+  }
 }
 
 .icon-container{
@@ -121,8 +139,9 @@ border: 1px green solid;
 
 @media (max-width:768px){
   .icon-container{
-    width: 80%;
+    width: 90%;
   }
+
 }
 
 
@@ -133,29 +152,118 @@ border: 1px green solid;
 
 }
 
-#footer-font {
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 2rem
+#footer-container {
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-between;
 }
 
-.social-networks {
-  max-width: 50vw;
-  list-style-type: none;
-  margin: 50px auto;
-  padding: 0;
-  text-align: center;
-  background-color: cadetblue;
+.footer-text {
+  font-size: 15px;
+  margin: 0;
+  font-family: fantasy;
+  color:#4A90E2;
 }
 
-.social-networks li {
-  display: inline-block;
-  width: 20%;
-  font-size: 4.5vmin;
-  color: whitesmoke
+.footer-text a:hover {
+    color: rgb(9, 102, 14)
 }
 
-.social-networks a {
+ul.social-networks {
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center the <ul> vertically */
+  justify-content: center; /* Center the <ul> horizontally */
+}
+
+ul.social-networks li {
+  margin-right: 20px; /* Adjust spacing between social icons as needed */
+  font-size: 30px;
+}
+
+ul.social-networks a {
   text-decoration: none;
-  border-bottom: 0
+  color:#4A90E2;
+}
+
+ul.social-networks a:hover {
+  color: #4C9A2A;
+}
+
+
+/* About us page */
+.about-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+  border: 5px solid white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.3);
+}
+
+.avatar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  filter: grayscale(0%);
+}
+
+/* General Styling */
+.main-container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Header Styling */
+.main-container h1 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2em; /* Adjust font size as needed */
+}
+
+/* Individual Profile Styling */
+.avatar {
+  width: 150px; /* Adjust image size as needed */
+  margin: 10px auto; /* Centers image */
+  display: block;
+  border: 3px solid #333; /* Adds a border around the image */
+}
+
+.about-card-text {
+  font-size: 1em;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* LinkedIn Icon Styling */
+.fab.fa-linkedin {
+  color: #0077b5; /* LinkedIn brand color */
+  font-size: 24px; /* Adjust icon size as needed */
+  margin-left: 10px;
+}
+
+/* Hover Effects */
+.avatar:hover, .fab.fa-linkedin:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 768px) {
+  .avatar {
+      width: 120px; /* Smaller image size for smaller devices */
+  }
+  .about-card-text {
+      font-size: 0.9em;
+  }
+}
+
+@media (max-width: 576px) {
+  .avatar {
+      width: 100px; /* Even smaller image size for very small devices */
+  }
 }
