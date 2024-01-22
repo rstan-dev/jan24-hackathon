@@ -4,11 +4,13 @@
 ## Intro
 **ThriveWallet was developed by Hackathon Team 4, 'The BUDJ€T€€RS', as an invaluable tool to enable users to track thier finances efficiently and achieve their New Year's financial resolution to save as much money as possible in 2024.** 
 
+**The deployed ThriveWallet site can be reached using the byline hyperlink above or [here](https://thrive-wallet-b5a54babd69b.herokuapp.com/ "ThriveWallet")**
+
 *This project has been developed as part of a Code Institute hosted hackathon. It is not for profit or to make any financial gain.*
 
 # Site Goals
 
-## Deliver an expense management app.
+## Deliver an expense management app
 
 ### Problem Statement
 Many individuals struggle to effectively track and manage their expenses, leading to financial stress and difficulties in saving efficiently.
@@ -83,6 +85,8 @@ You can access our project on GitHub [here](https://github.com/rstan-dev/jan24-h
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/rstan-dev/jan24-hackathon)
 ![GitHub forks](https://img.shields.io/github/forks/rstan-dev/jan24-hackathon?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/rstan-dev/jan24-hackathon?style=social)
+![GitHub Repo watchers](https://img.shields.io/github/watchers/rstan-dev/jan24-hackathon)
+
 
 ## Known Issues
 
@@ -93,3 +97,10 @@ The following resources were used:
 3. [The Code Institute](https://codeinstitute.net/full-stack-software-development-diploma/?utm_term=the%20code%20institute&utm_campaign=CI+-+UK+-+Search+-+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=1578649861&hsa_grp=62188641240&hsa_ad=635720257674&hsa_src=g&hsa_tgt=kwd-572567981978&hsa_kw=the%20code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQiAwbitBhDIARIsABfFYILuXWM0fanFTlFcwI7ku6NJMSLl7B0mwo44q2y6L7BWgHUs3N8FYJAaAkKUEALw_wcB "Code Institute") course projects
 
 The BUDJ€T€€RS team:
+- [SamOBrienOlinger](https://github.com/SamOBrienOlinger)
+- [rstan-dev](https://github.com/rstan-dev)
+- [richard9106](https://github.com/richard9106)
+- [JakBul](https://github.com/JakBul)
+- [bky201](https://github.com/bky201)
+- [Annytomica](https://github.com/Annytomica)
+- [konstanciaa](https://github.com/konstanciaa)
